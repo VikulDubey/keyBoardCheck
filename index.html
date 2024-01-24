@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Check</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            background: linear-gradient(75deg, #86A789, #C3E2C2);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Press the key and see the magic.😎</h2>
+    </div>
+
+
+    <script>
+        const body = document.querySelector('body');
+        const heading = body.querySelector('h2')
+        body.addEventListener("keydown", (e) => {
+            heading.innerHTML = `   <table>
+        <tr>
+            <th>key</th>
+            <th>keyCode</th>
+            <th>Code</th>
+        </tr>
+
+        <tr>
+            <td>${e.code == "Space" ? "Space" : e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        </tr>
+    </table>`
+        })
+
+    </script>
+</body>
+
+</html>
